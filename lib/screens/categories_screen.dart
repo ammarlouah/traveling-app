@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../app_data.dart';
+import '../widgets/categoty_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   //const CategoriesScreen({ Key? key }) : super(key: key);
@@ -10,15 +12,16 @@ class CategoriesScreen extends StatelessWidget {
         title: Text('دليل سياحي'),
       ),
       body: GridView(
+        padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 7 / 8,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
-        children: [
-          
-        ],
+        children: Categories_data.map((categoryData) => CategoryItem(
+            title: categoryData.title,
+            imageUrl: categoryData.imageUrl)).toList(),
       ),
     );
   }
