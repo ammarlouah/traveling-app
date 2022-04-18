@@ -6,16 +6,16 @@ import '../screens/category_trips_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   //const CategoryItem({ Key? key }) : super(key: key);
-
+  final String id;
   final String title;
   final String imageUrl;
 
-  const CategoryItem({required this.title, required this.imageUrl}) : super();
+  const CategoryItem({required this.id,required this.title, required this.imageUrl}) : super();
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
-        builder: (c) => CategoryTripsScreen(),
+        builder: (c) => CategoryTripsScreen(id, title),
       ),
     );
   }
