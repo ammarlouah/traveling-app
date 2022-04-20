@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_app/screens/categories_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:traveling_app/screens/category_trips_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ))),
       home: CategoriesScreen(),
+      routes: {
+        '/categorie-trips': (ctx) => CategoryTripsScreen(),
+      },
     );
   }
 }
